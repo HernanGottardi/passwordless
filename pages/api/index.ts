@@ -1,6 +1,10 @@
 import {NextApiRequest, NextApiResponse} from "next"
+import {firestore} from "../../lib/firestore"
+import {Auth, sendCode} from "../../lib/auth"
+import {findOrCreateAuth} from "../../lib/controller/auth"
 
-export default function (req: NextApiRequest, res: NextApiResponse)
+export default async function (req: NextApiRequest, res: NextApiResponse)
 {
-    res.send(process.env.FIREBASE_CONNECTION)
-}
+    // const auth = await sendCode(req.body.email);
+    res.send("hola")
+} 
