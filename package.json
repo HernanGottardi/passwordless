@@ -1,0 +1,33 @@
+{
+  "name": "vercel-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HernanGottardi/vercel-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HernanGottardi/vercel-test/issues"
+  },
+  "homepage": "https://github.com/HernanGottardi/vercel-test#readme",
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "firebase-admin": "^12.1.0",
+    "next": "^14.2.3",
+    "random-seed": "^0.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.2"
+  }
+}
