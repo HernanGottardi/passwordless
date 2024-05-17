@@ -1,10 +1,17 @@
 import {NextApiRequest, NextApiResponse} from "next"
-import {firestore} from "../../lib/firestore"
-import {Auth, sendCode} from "../../lib/auth"
-import {findOrCreateAuth} from "../../lib/controller/auth"
+import {sendCode} from "../../lib/auth"
 
-export default async function (req: NextApiRequest, res: NextApiResponse)
-{
-    // const auth = await sendCode(req.body.email);
-    res.send("hola")
-} 
+export default function (req: NextApiRequest, res: NextApiResponse) {
+    // Permitir solicitudes CORS desde cualquier origen
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        // Responder de inmediato a las solicitudes OPTIONS
+        res.status(200).end();
+        return;
+    }
+
+    res.send("HOLA JES SOS EL AMOR DE MI VIDA CASATE CONMIGO Y TENGAMOS 80 HIJOS");
+}

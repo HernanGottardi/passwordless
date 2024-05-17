@@ -24,7 +24,7 @@ export class Auth
 
     async push ()
     {
-        const snap = await this.ref.update(this.data);
+        await this.ref.update(this.data);
     }
 
     static async findByEmail(email:string)
@@ -57,19 +57,18 @@ export class Auth
 
 export async function sendCode (email:string)
 {
-    // controller.
+    // controller - nos devuelve una instancia de auth.
     const auth = await findOrCreateAuth(email);
     
-    // Datos extras.
+    // calculamos datos.
     const code = gen.intBetween(10000, 99999);
-    const now = new Date();
-    const twentyMinutesFromNow = addMinutes(now, 20);
+    const twentyMinutesFromNow = addMinutes(new Date(), 20);
 
-    // Completamos
+    // Completamos datos.
     auth.data.code = code;
     auth.data.expires = twentyMinutesFromNow;
 
-    // Agregamos en DB
+    // Enviamos a la DB.
     await auth.push();
 
     return auth;

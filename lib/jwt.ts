@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 
 export function generate (obj)
 {
-    var token = jwt.sign(obj, process.env.JWT_SECRET)
+    return jwt.sign(obj, process.env.JWT_SECRET)
 }
 
 export function decode (token)

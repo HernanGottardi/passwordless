@@ -22,5 +22,7 @@ export async function findOrCreateAuth (email:string)
             code: "",
             expires: new Date()
         })
+
+        return newAuth;
     }
 }
