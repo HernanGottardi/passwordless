@@ -8,7 +8,7 @@ const collection  = firestore.collection("auth")
 export class Auth 
 {
     
-    ref:FirebaseFirestore.DocumentReference;
+    ref:any;
     data: any;
 
     constructor(id)

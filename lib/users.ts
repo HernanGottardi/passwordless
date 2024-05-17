@@ -5,7 +5,7 @@ const collection  = firestore.collection("users")
 export class User 
 {
     
-    ref:FirebaseFirestore.DocumentReference;
+    ref:any;
     data: any;
     id: string;
 
